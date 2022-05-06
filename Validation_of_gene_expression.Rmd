@@ -5,7 +5,7 @@ date: "5/5/2022"
 output: html_document
 ---
 
-You will have to download the raw dataset showing gene expression called "raw_gene_data.xlsx" into your working directory. This is available on GitHub
+You will have to download the raw dataset showing gene expression called "raw_gene_data.xlsx" into your working directory. This is available on GitHub `https://github.com/Fazhir/BCB546-Spring2022-Final_Project`
 
 Reproducing Fig.4 
 
