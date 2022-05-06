@@ -1,7 +1,7 @@
 # BCB546-Spring2022-Final_Project
 Final Group Project
 
-This repository has files and codes that were used to reproduce the ***Gene expression analysis of porcine whole blood cells infected with foot-and-mouth disease virus using high-throughput sequencing technology*** by Ding et al., 2018. `https://doi.org/10.1371/journal.pone.0200081`
+This repository has files and codes that were used to reproduce the [paper](https://doi.org/10.1371/journal.pone.0200081) entitled ***Gene expression analysis of porcine whole blood cells infected with foot-and-mouth disease virus using high-throughput sequencing technology*** by Ding et al., 2018. 
 
 We shared roles and responsibilities amongst ourselves and each member reproduced a particular figure in the paper
 - Fig.1 was to be reproduced by `Ann Murithi`; but since we did not have data for gene expression of all the genes, it was non-reproducible. She used the available data to look at the ***Distribution of gene length*** and also looking at how it varried between the two major groups (The infected and Non-Infected)
@@ -13,20 +13,29 @@ We shared roles and responsibilities amongst ourselves and each member reproduce
 Downloading, inspection and description of the data used in this study
   The links to the data used were available in the `supplementary information` section of the paper
   Data relating to the particular segment of the paper to be reproduced was downloaded by each corresponding member on to their PC for further operations.
-  I, personally utilized `https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0200081.s004` excel dataset that had the expression levels of the differentially expressed genes.
+  I, personally utilized [Excel dataset](https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0200081.s004) that had the expression levels of the differentially expressed genes.
   My intention was to reproduce Figure 4; which was produced during the validation of 10 randomly selected genes that had been observed to be upregulated
   
- Rerunning analysis
-- Figures produced by Ann
-    The code used to produced the figures is a vailable in a markdown file on the Github repository [here](https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0200081.s004) for the 
+ ***Rerunning analysis***
+- ***Rerun by Ann Murithi:***
+    The code used to produced the figures is a vailable in a markdown file on the [Github repository](https://github.com/Fazhir/BCB546-Spring2022-Final_Project) named `Final_project_MK.Rmd`. She intended to look at the distribution of the gene length amongst the DEGs. She also went further to look at this distribution across the two groups (NI and I) in order to see if a particular size of the gene is observed more in a specific group of infection status.
     
-  I performed all the tasks of manipulating the data and rerunning the analysis using R version 4.1.3
-  The analysis involved; 
+- ***Rerun by Mercy Fakude:***
+    The code used to produce the different figures for the quality of the trimmed data are available on Github. She intended to examine the Q-score of the bases in the sequence data across the different quality thresholds set by the authors of this paper (Q10, Q20 and Q30). She also looked at the GC content of the RNAseq data trimmed at the three different thresholds.
+    
+- ***Rerun by Stephen Gray:***
+    Gray tried to rerun the Gene Ontology functional classification of the DEGs by extracting the corresponding gene names and their functions from the Entrez database using the ENSMBL gene IDs provided, followed. He then characterized the genes by a `Functional term` within three domains; Molecular, cellular or Biological function using DAVID.
+ 
+- ***Rerun by Ceren Ordas:***
+    Ceren was tasked with reproducing the KEGG enrichment analysis performed in the paper intended to identify the different enrinched pathways amongst the DEGs. The challenge was that the paper never mentioned the particular software used to produce their chart. She resorted to using `ShinyGO 0.76 Web application` but this could produce contradicting results corresponding to the gene IDs provided. 
+    
+- ***Rerun by Fazhir Kayondo (Me):***
+    I was tasked with recreating the graph for validation of gene expression for 10 randomly selected genes. The code markdown file used for reproducing Fig.4 is in the Github repository named `Validation of gene expression`. I performed all the tasks of manipulating the data and rerunning the analysis using R version 4.1.3.
+The analysis involved; 
   - `Loading the packages`
   - `Importing and manipulating the dataset` into the R environment
   - `Randomly selecting 10 genes` for validation
   - `Assigning corresponding gene names` to the GeneIDs
   - `Visualizing the selected genes` using Plotly package of R 
-  The code markdown file used for reproducing Fig.4 is in the repository named "Validation of gene expression"
-  
+    
 A pdf showing all the figures created during the re-analysis by the group has been included in the repository named `Reproduced_figures`. These were created using different software packages in `RStudio` and `Python`
