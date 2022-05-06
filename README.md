@@ -24,7 +24,7 @@ Downloading, inspection and description of the data used in this study
     The code used to produce the different figures for the quality of the trimmed data are available on Github. She intended to examine the Q-score of the bases in the sequence data across the different quality thresholds set by the authors of this paper (Q10, Q20 and Q30). She also looked at the GC content of the RNAseq data trimmed at the three different thresholds.
     
 - ***Rerun by Stephen Gray:***
-    Gray tried to rerun the Gene Ontology functional classification of the DEGs by extracting the corresponding gene names and their functions from the Entrez database using the ENSMBL gene IDs provided, followed. He then characterized the genes by a `Functional term` within three domains; Molecular, cellular or Biological function using DAVID.
+    Gray tried to rerun the Gene Ontology functional classification of the DEGs by extracting the corresponding gene names and their functions from the Entrez database using the ENSMBL gene IDs provided. He then characterized the genes by a Functional term within three domains; `Molecular`, `Cellular` or `Biological` function using DAVID. Returned gene clusters are in a text file named `DEGs_clustering.txt` in the Github repository.
  
 - ***Rerun by Ceren Ordas:***
     Ceren was tasked with reproducing the KEGG enrichment analysis performed in the paper intended to identify the different enrinched pathways amongst the DEGs. The challenge was that the paper never mentioned the particular software used to produce their chart. She resorted to using `ShinyGO 0.76 Web application` but this could produce contradicting results corresponding to the gene IDs provided. 
