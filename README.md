@@ -18,7 +18,7 @@ Downloading, inspection and description of the data used in this study
   
  Rerunning analysis
 - Figures produced by Ann
-    The code used to produced the figures is a vailable in a markdown file on the Github repository [here]('https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0200081.s004') for the 
+    The code used to produced the figures is a vailable in a markdown file on the Github repository [here](https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0200081.s004) for the 
     
   I performed all the tasks of manipulating the data and rerunning the analysis using R version 4.1.3
   The analysis involved; 
