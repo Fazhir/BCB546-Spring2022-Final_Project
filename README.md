@@ -1,7 +1,7 @@
 # BCB546-Spring2022-Final_Project
 Final Group Project
 
-This repository has files and codes that were used to reproduce the [paper](https://doi.org/10.1371/journal.pone.0200081) entitled ***Gene expression analysis of porcine whole blood cells infected with foot-and-mouth disease virus using high-throughput sequencing technology*** by Ding et al., 2018. 
+This repository has files and codes that were used to reproduce some figures in the [paper](https://doi.org/10.1371/journal.pone.0200081) entitled ***Gene expression analysis of porcine whole blood cells infected with foot-and-mouth disease virus using high-throughput sequencing technology*** by Ding et al., 2018. 
 
 We shared roles and responsibilities amongst ourselves and each member reproduced a particular figure in the paper
 - Fig.1 was to be reproduced by `Ann Murithi`; but since we did not have data for gene expression of all the genes, it was non-reproducible. She used the available data to look at the ***Distribution of gene length*** and also looking at how it varried between the two major groups (The infected and Non-Infected)
