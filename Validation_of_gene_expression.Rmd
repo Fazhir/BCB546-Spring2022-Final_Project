@@ -1,0 +1,51 @@
+---
+title: "Final_project"
+author: "Fazhir"
+date: "5/5/2022"
+output: html_document
+---
+
+You will have to download the raw dataset showing gene expression called "raw_gene_data.xlsx" into your working directory. This is available on GitHub
+
+Reproducing Fig.4 
+
+Load packages
+```{r}
+#install.packages("plotly")
+#install.packages("tidyverse")
+library(tidyverse)
+library(dplyr)
+library(plotly)
+library(readxl)
+```
+
+Import the dataset
+```{r}
+raw_gene_data <- read_excel("raw_gene_data.xlsx")
+raw_gene_data$Ref_up <- raw_gene_data$`RPKM-Group I` / raw_gene_data$`RPKM-Group NI`
+std = sapply(raw_gene_data[c('Ref_up')], sd)
+raw_gene_data$"SD" <- NA
+raw_gene_data[["SD"]] <- raw_gene_data$`Probability` * (std/100) #This Standard deviation is my own version not the actual one
+```
+
+Random selection of the genes
+```{r}
+selected_genes <- raw_gene_data[c(23, 29, 11, 80, 4, 45, 14, 74, 59, 26), ]
+PBS.Reference = data.frame(PBS.Reference = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1)) # I used "1" for all the values just by inference. We were not provided with this information
+semi_final_df <- cbind(selected_genes, PBS.Reference)
+```
+
+Assigning names of selected genes
+```{r}
+gene_name = data.frame(gene_name = c('NADH4', 'ATP8', 'MRPS23', 'DCTN2', 'C1QA', 'CD209', 'CAPG', 'APRT', 'CEBPE', 'RPS12'))
+final_df <- cbind(semi_final_df, gene_name)
+```
+
+Visualization of the selected genes; Plotting with `Plotly`
+```{r}
+library(plotly)
+fig <- plot_ly(final_df, x = ~gene_name, y = ~Ref_up, type = 'bar', name = 'FMDV', marker = list(color = 'red'), error_y = list(array=~SD))
+fig <- fig %>% add_trace(y = ~PBS.Reference, name = 'PBS', marker = list(color = 'black'))
+fig <- fig %>% layout(yaxis = list(title = 'Relative expression'), barmode = 'group', bargap = 0.20, bargroupgap = 0.45)
+fig
+```
