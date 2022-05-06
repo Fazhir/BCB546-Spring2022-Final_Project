@@ -23,7 +23,7 @@ Import the dataset
 ```{r}
 raw_gene_data <- read_excel("raw_gene_data.xlsx")
 raw_gene_data$Ref_up <- raw_gene_data$`RPKM-Group I` / raw_gene_data$`RPKM-Group NI`
-std = sapply(raw_gene_data[c('Ref_up')], sd)
+std = sapply(raw_gene_data[c('Ref_up')], sd) #this computes the standard deviation of the fold changes (Ref_up)
 raw_gene_data$"SD" <- NA
 raw_gene_data[["SD"]] <- raw_gene_data$`Probability` * (std/100) #This Standard deviation is my own version not the actual one
 ```
