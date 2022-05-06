@@ -17,9 +17,17 @@ Downloading, inspection and description of the data used in this study
   My intention was to reproduce Figure 4; which was produced during the validation of 10 randomly selected genes that had been observed to be upregulated
   
  ***Rerunning analysis***
+ 
+ -- All codes used are in the [Github repository](https://github.com/Fazhir/BCB546-Spring2022-Final_Project)
+ 
+ -- Uniprot Gene names retrieved using the provided ENSMBL gene IDs are in the Excel file named `ID_identify_uniprot.xlsx`
+ 
+ --
+ 
+ 
 - ***Rerun by Ann Murithi:***
 
- The code used to produced the figures is a vailable in a markdown file on the [Github repository](https://github.com/Fazhir/BCB546-Spring2022-Final_Project) named `Final_project_MK.Rmd`. She intended to look at the distribution of the gene length amongst the DEGs. She also went further to look at this distribution across the two groups (NI and I) in order to see if a particular size of the gene is observed more in a specific group of infection status.
+The code used is named `End of semester project.ipynb`. She intended to look at the distribution of the gene length amongst the DEGs. She also went further to look at this distribution across the two groups (NI and I) in order to see if a particular size of the gene is observed more in a specific group of infection status.
     
 - ***Rerun by Mercy Fakude:***
 
@@ -43,4 +51,4 @@ The analysis involved;
   - `Assigning corresponding gene names` to the GeneIDs
   - `Visualizing the selected genes` using Plotly package of R 
     
-A pdf showing all the figures created during the re-analysis by the group has been included in the repository named `Reproduced_figures`. These were created using different software packages in `RStudio` and `Python`
+A pdf showing all the figures created during the re-analysis by the group and compairing with the figures present in the paper has been included in the repository named. It has been named `Figures compared`. These were created using different software packages in `RStudio` and `Python`
