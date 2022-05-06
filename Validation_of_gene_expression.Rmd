@@ -1,6 +1,6 @@
 ---
 title: "Final_project"
-author: "Fazhir"
+author: "Ann Murithi", "Fazihr Kayondo ""Ceren Ordas", "Stephen Gray", "Mercy Fakude"
 date: "5/5/2022"
 output: html_document
 ---
