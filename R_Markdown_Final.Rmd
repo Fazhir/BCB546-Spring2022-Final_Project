@@ -28,7 +28,7 @@ library(egg)
 
 ```{r}
 #Reading CSV file, Subsetting, and Merging Data for GO analysis 
-gene_onto= read.csv("my_dat_3.csv", fileEncoding = "UTF-8-BOM", header = T)
+gene_onto= read.csv("gene_ontology_dat.csv", fileEncoding = "UTF-8-BOM", header = T)
 
 ```
 
