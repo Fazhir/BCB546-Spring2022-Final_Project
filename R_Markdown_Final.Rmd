@@ -1,0 +1,120 @@
+---
+title: "Gene Ontology Analysis" and Kegg Analysis 
+author: Stephen Gray
+date: "5/6/2022"
+output: html_document
+---
+
+```{r}
+#Install Packages For Analysis 
+install.packages("ggplot2")
+install.packages("tidyr")
+install.packages("dplyr")
+install.packages("tidyverse")
+install.packages("ggpubr")
+install.packages("patchwork")
+install.packages("egg")
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(ggpubr)
+library(patchwork)
+library(egg)
+
+```
+
+
+
+
+```{r}
+#Reading CSV file, Subsetting, and Merging Data for GO analysis 
+gene_onto= read.csv("my_dat_3.csv", fileEncoding = "UTF-8-BOM", header = T)
+
+```
+
+
+
+```{r}
+#Subsetting Data Based on Ontology Function 
+gene_onto_subset= subset(gene_onto,select= c(EntrezID,Gene.Ontology,Function))
+gene_onto_group= gene_onto_subset %>% group_by(Gene.Ontology)
+GroupCount=gene_onto_group %>%
+  count(Function)
+GroupCount_Split=split(GroupCount, GroupCount$Gene.Ontology)
+Biological=GroupCount_Split$Biological
+Molecular=GroupCount_Split$Molecular
+Cellular=GroupCount_Split$Cellular
+```
+
+
+
+```{r}
+#Gene Ontology BarPlot
+Bio=ggplot(data= Biological,aes(x=n, y=Function))+
+  geom_bar(stat="identity",width = 0.3, fill="Blue")+
+  ylab(NULL)+
+  xlab(NULL)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+Mol=ggplot(data= Molecular,aes(x=n, y=Function))+
+  geom_bar(stat="identity", width= 0.3,  fill="Yellow")+
+  ylab("Gene Function")+
+  xlab(NULL)+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+Cell=ggplot(data= Cellular,aes(x=n, y=Function))+
+  geom_bar(stat="identity", width = 0.3, fill="Brown")+
+  ylab(NULL)+
+  xlab("Number of Genes")+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
+
+ggarrange(Bio, Mol, Cell,
+          labels = c("Bio","Mol","Cell"),
+          ncol = 1, nrow = 3)
+
+```
+
+
+
+
+
+
+---
+title: Kegg Analysis 
+author:Ceren Ordas
+date: "5/6/2022"
+output: html_document
+---
+
+
+
+#R PACKAGE FOR KEGG ANALYSIS:
+```{r}
+install.packages("pathfindR")
+library(pathfindR)
+```
+
+
+#Download data frame:
+```{r}
+library(readxl)
+DataforEnrichment <- read_excel("DataforEnrichment.xlsx", col_types = c("text", "numeric", "numeric", "text", "text"))
+View(DataforEnrichment)
+```
+
+#Make enrichment chart:This code gives us the enrichment chart for the top 20 terms, just like they did in the original paper, but we are not able to customize our data with this code so I used another code later on.
+
+```{r}
+enrichment_chart(result_df = DataforEnrichment, top_terms = 20)
+```
+
+#Using ggplot to make the enrichment chart with top 20 terms and using a blue color gradient just like the authors did on the original paper.
+
+```{r}
+library(ggplot2)
+g <- enrichment_chart(DataforEnrichment, top_terms = 20)
+g <- g + scale_color_gradient(low = "black", high = "blue")
+g
+```
+
+
+
+
