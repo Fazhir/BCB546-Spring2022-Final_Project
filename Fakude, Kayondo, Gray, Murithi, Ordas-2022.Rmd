@@ -73,7 +73,14 @@ https://github.com/cerenordas/BCB546-Spring2022-Final_Project
 -------
 
 ## Figure 2:
------
+-The authors sought to break down the function of the differentially expressed genes using the gene ontology. Gene ontology will classify genes into three functional domains (Biological Process, Cellular Component, and Molecular Function), and then further break the genes down through the use of functional terms within each domain. 
+-To recreate this analysis we utilized the Gene ID’s provided in the supplementary material and derived the Entrez ID’s to be used in the DAVID database for gene ontology analysis. 
+-After finding the Entrez ID’s we uploaded them to the DAVID database which breaks down the gene ID’s into functional domains and then by functional terms. However, it is important to note that gene ontology has varying levels of specificity, and as the paper didn’t mention the parameters used in this analysis it was difficult to recreate the analysis completely true to the paper. 
+-Nonetheless, using the DAVID database the Gene ID’s provided were broken down by functional domains with functional terms. 
+-Now the goal was to subset the data twice, once by functional domain, and then again by functional term to provide a count of how many functional terms occurred within a functional domain. This was easily accomplished in RStudio
+-After subsetting the data by functional domain and functional term three separate ggplots were created to represent each of the functional domains, and display the occurrences of functional terms within each domain. 
+-After three separate ggplots were created they were aligned together using the “ggarrange” function which allowed them to be presented on one page and compared side-by-side. 
+-Overall, the lack of annotation data and specificity regarding the gene ontology analysis parameters made replicating this portion of the paper challenging. However, using Gene ID’s and online databases we were able to get close to the file structure and demonstrate that visualizing gene ontology data is possible through the use of Rstudio
 
 ## Figure 3:
 
