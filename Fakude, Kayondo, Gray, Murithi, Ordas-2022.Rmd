@@ -1,0 +1,110 @@
+---
+title: "Fakude, Kayondo, Gray, Murithi, Ordas-2022"
+author: "Ceren Ordas"
+date: '2022-05-07'
+output: html_document
+---
+
+# Original Paper Information
+
+- Introduce the original paper
+- explain the technical details of our replication analyses
+- summarizes our replication of the original results.
+
+## Paper Name:
+Gene expression analysis of porcine whole blood cells infected with foot-and-mouth disease virus using high-throughput sequencing technology
+
+By:Lv J, Ding Y, Liu X, Pan L, Zhang Z, Zhou P, et al. (2018)
+
+A transcriptome analysis of whole blood from pigs infected with foot-and-mouth disease virus (FMDV) was performed using the paired-end Illumina sequencing technique to understand the interactions between the pathogen and its host cells.
+
+This study was the first transcriptome analysis of pig whole blood cells infected with FMDV.
+
+120 differentially expressed genes (DEGs) were identified; 110 up-regulated genes and 10 down-regulated genes. 
+
+This study looked at DEGs involved in interactions between the uninfected and uninfected pigs, Gene ontology (GO) annotation, Kyoto Encyclopedia of Genes and Genomes (KEGG) enrichment.
+
+This current study is important because it improves our understanding of the interactions between FMDV and host cells as well as the diagnosis and control of FMD.
+
+# METHODS
+
+- 12 animals- 6 non-infected, 6 infected.
+- Whole blood samples collected from both groups 10 days post infection and 12 libraries were created.
+- The authors conducted paired-end sequencing (100 base pairs).
+- Quality control of raw reads - FastQC
+- Differential expression analysis was done
+- Downstream gene ontology (GO) and KEGG gene analysis was conducted.
+
+
+# Technical Details and Replication of Analyses 
+
+ We recreated the analysis from a paper by  Lv J, Ding Y, Liu X, Pan L, Zhang Z, Zhou P, et al. (2018) and focused on Figures 1, 2, 3, 4, and made new figures as well.
+
+# Documentation
+
+- Our group used both Python and R.
+
+- A GitHub repository was made.
+
+- README.md file will contains all the relevant information about the figures, data, and the markdown files.
+
+- Markdown files (for Python and R) will contain the code/packages used to make the figues and will be in a separate directory.
+
+- All the data will be in a separate directory. 
+
+- All the files needed/figures will be in the GitHub repository.
+
+
+# Workflow
+
+- Data was downloaded from the 'supporting information' part of the webpage where the paper was as an excel (.xlsx) document. The raw data was not available. Therefore, most data had to be manipulated or new data had to be constructed using online sources to recreate these figures.
+
+### The data can be found in this link:
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0200081#sec015
+
+### Final Project Repository Link:
+https://github.com/cerenordas/BCB546-Spring2022-Final_Project
+
+
+
+# Summary of our Replication
+
+### Figure 1:
+-------
+
+## Figure 2:
+-----
+
+## Figure 3:
+
+- With the Gene ID’s provided, through the http://bioinformatics.sdstate.edu/go/ website, used ShinyGO 0.76 web application to get “Term Description”, “Fold Enrichment” and the “Genes” associated with each term description. Data provided said whether these genes were upregulated or downregulated and their p-values. 
+
+- Constructed a data on Excel with ““Term Description”, “Fold Enrichment”, “lowest p value”, “Upregulated Genes” and “Downregulated Genes”
+
+- Imported data to RStudio as “DataforEnrichment” and installed the pathfindR package and then used 'enrichment_chart' and 'ggplot' to customize the figure.
+
+- Overall, it was challenging to replicate Figure 3 because I used an R package while the original paper used the KOBAS software, we were missing original data because some Gene ID's did not give a Gene name when we looked for it so we were missing data. Figure 3 has some data in correct places but some new data shows up due to the inconsistency of Gene ID's.
+
+## Figure 4:
+
+### Reproducing the relative expression
+
+- Used the provided ENSEMBL geneID to produce a list of their corresponding gene names using Uniprot ID retriever. 
+- This yielded a few obstacles:
+1. Of the randomly selected genes in the paper, could only retrieve IDs for NADH4, ATP8 and MRPS23.
+2. We randomly selected seven more from the list to make a list of 10 genes for this re-do.
+3. We never had the values for the expression of PBS, which was used as a reference control.
+- We utilized the description of fold changes in the paper to estimate this value as a 1 unit of RPKM (hence all our preceding relative expression values for the genes used the reference as 1 to compute fold change).
+- We created a dataset names “Relative_expression.txt” using Microsoft Excel.
+- We then created the plot using Plotly package of R version 4.1.3
+- Since we never had the actual reference values of PBS, we could not justify the fold change as significant or not.
+- We failed to eliminate the error bars from the reference bars by modifying our code.
+
+### New Figures:
+
+-----------
+
+## Overall
+
+- It was difficult to re-create the figures because we did not have some of the RAW DATA. We had to piece together our own data from different sources or used different packages, etc. 
+
