@@ -1,0 +1,37 @@
+---
+title: "BCB546-Spring2022_FinalProject_KEGG_Analysis_RMarkdown"
+author: "Ceren Ordas"
+date: '2022-05-06'
+output: html_document
+---
+
+R PACKAGE FOR KEGG ANALYSIS:
+
+```{r}
+install.packages("pathfindR")
+library(pathfindR)
+```
+
+Download data frame:
+
+```{r}
+library(readxl)
+DataforEnrichment <- read_excel("DataforEnrichment.xlsx", col_types = c("text", "numeric", "numeric", "text", "text"))
+View(DataforEnrichment)
+```
+
+Make enrichment chart:
+This code gives us the enrichment chart for the top 20 terms, just like they did in the original paper, but we are not able to customize our data with this code so I used another code later on.
+
+```{r}
+enrichment_chart(result_df = DataforEnrichment, top_terms = 20)
+```
+
+- Using ggplot to make the enrichment chart with top 20 terms and using a blue color gradient just like the authors did on the original paper.
+
+```{r}
+library(ggplot2)
+g <- enrichment_chart(DataforEnrichment, top_terms = 20)
+g <- g + scale_color_gradient(low = "black", high = "blue")
+g
+```
