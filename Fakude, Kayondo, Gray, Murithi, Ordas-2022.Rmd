@@ -99,7 +99,6 @@ Fig.4 was about the validation of 10 randomly selected genes from amongst the up
 - Since the paper did not avail us with expression levels of the PBS for comparison, we infered it to be at RPKM of 1.
 
 We downloaded the data in Excel format, used the ENSMBL geneIDs to retriev corresponding gene names using `Uniprot ID Retriever` and then randomly selected 10 genes for reanalysis.
-
 Tasked with recreating the graph for validation of gene expression for 10 randomly selected genes. The code used for reproducing Fig.4 is an RMarkdown file in the Github repository and is named `Validation of gene expression.Rmd`. I performed all the tasks of manipulating the data and rerunning the analysis using R version 4.1.3. The analysis involved;
 
 - Loading the packages
