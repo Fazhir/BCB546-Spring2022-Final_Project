@@ -30,7 +30,7 @@ The code used is named `End of semester project.ipynb`. She intended to look at 
     
 - ***Rerun by Mercy Fakude:***
 
-The code used to produce the different figures for the quality of the trimmed data are available on Github. She intended to examine the Q-score of the bases in the sequence data across the different quality thresholds set by the authors of this paper (Q10, Q20 and Q30). She also looked at the GC content of the RNAseq data trimmed at the three different thresholds.
+The code used to produce the different figures for the quality of the trimmed data are available on Github. This is named `GC and Q score-checkpoint.ipynb`. She intended to examine the Q-score of the bases in the sequence data across the different quality thresholds set by the authors of this paper (Q10, Q20 and Q30). She also looked at the GC content of the RNAseq data trimmed at the three different thresholds.
     
 - ***Rerun by Stephen Gray:***
 
