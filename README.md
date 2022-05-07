@@ -38,7 +38,7 @@ Gray tried to rerun the Gene Ontology functional classification of the DEGs by e
  
 - ***Rerun by Ceren Ordas:***
 
-Ceren was tasked with reproducing the KEGG enrichment analysis performed in the paper intended to identify the different enrinched pathways amongst the DEGs. The challenge was that the paper never mentioned the particular software used to produce their chart. She resorted to using `ShinyGO 0.76 Web application` but this could produce contradicting results corresponding to the gene IDs provided. 
+Ceren was tasked with reproducing the KEGG enrichment analysis performed in the paper intended to identify the different enrinched pathways amongst the DEGs. The challenge was that the paper never mentioned the particular software used to produce their chart. She resorted to using `ShinyGO 0.76 Web application` but this could produce contradicting results corresponding to the gene IDs provided. The code to this is found in the Rmd file named `KEGG_Analysis_RMarkdown.Rmd`
     
 - ***Rerun by Fazhir Kayondo (Me):***
 
